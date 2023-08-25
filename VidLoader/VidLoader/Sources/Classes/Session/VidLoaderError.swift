@@ -11,14 +11,14 @@ import Foundation
 /// VidLoaderError is wrapper for Error that is Codable and can be saved in the task description
 public struct VidLoaderError: Error, Codable, Equatable {
     let code: Int
-    let description: String
+    let desc: String
     let localizedDescription: String
     let domain: String
 
     init(error: Error) {
         let nsError = error as NSError
         self.code = nsError.code
-        self.description = nsError.description
+        self.desc = nsError.description
         self.localizedDescription = nsError.localizedDescription
         self.domain = nsError.domain
     }
